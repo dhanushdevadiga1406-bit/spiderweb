@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Spiderweb Browser</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <main class="browser-shell">
+    <header class="browser-chrome">
+      <div class="topline">
+        <div class="brand-lockup" aria-label="Spiderweb Browser">
+          <span class="brand-mark" aria-hidden="true"><span></span></span>
+          <span>spiderweb</span>
+        </div>
+        <div class="window-controls" aria-label="Window controls">
+          <button class="window-button minimize" aria-label="Minimize">−</button>
+          <button class="window-button maximize" aria-label="Maximize">□</button>
+          <button class="window-button close" aria-label="Close">×</button>
+        </div>
+      </div>
+
+      <div class="tabs-row">
+        <div class="tabs" id="tabs" role="tablist" aria-label="Open tabs"></div>
+        <button class="new-tab" id="newTab" aria-label="Open a new tab">+</button>
+        <button class="menu-button" id="menuButton" aria-label="Open browser menu">•••</button>
+      </div>
+
+      <div class="toolbar">
+        <div class="navigation-actions" aria-label="Navigation">
+          <button class="icon-button" id="backButton" aria-label="Go back">←</button>
+          <button class="icon-button muted" id="forwardButton" aria-label="Go forward">→</button>
+          <button class="icon-button" id="reloadButton" aria-label="Reload page">↻</button>
+        </div>
+        <form class="address-form" id="addressForm">
+          <span class="site-status" id="siteStatus" aria-hidden="true">✦</span>
+          <input id="addressInput" autocomplete="off" spellcheck="false" aria-label="Address and search" value="spiderweb://start" />
+          <button class="address-action" type="button" id="bookmarkButton" aria-label="Bookmark page">☆</button>
+        </form>
+        <button class="icon-button" id="profileButton" aria-label="Profile">◎</button>
+      </div>
+    </header>
+
+    <section class="browser-viewport" id="viewport" aria-live="polite"></section>
+
+    <footer class="status-bar">
+      <span><i class="status-dot"></i> Secure browsing enabled</span>
+      <span id="clock">00:00</span>
+    </footer>
+  </main>
+  <script src="render.js"></script>
+  <script src="script.js"></script>
+</body>
+</html>
